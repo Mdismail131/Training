@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="jquery1.css">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="add_product_form">
+			<label for="product_sku">
+				<span>Product SKU</span> 
+				<input type="text" name="product_sku" id="product_sku">
+			</label>
+			<label for="product_name">
+				<span>Product Name</span> 
+				<input type="text" name="product_name" id="product_name">
+			</label>
+			<label for="product_price">
+				<span>Product Price</span> 
+				<input type="text" name="product_price" id="product_price">
+			</label>
+			<label for="product_quantity">
+				<span>Product Quantity</span> 
+				<input type="text" name="product_quantity" id="product_quantity">
+			</label>
+			<p class="submit">
+				<input type="button" name="add_product" id="add_product" value="Add Product">
+			</p>
+		</div>
+		<div id="notification">
+			<div class="success">Product Added Successfully.<a href="#" class="close">X</a></div>
+			<div class="error">There is some problem.<a href="#" class="close">X</a></div>
+		</div>
+		<div id="product_list">
+			<table>
+				<tr>
+					<th>SKU</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Action</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	arr = [];
+	tempArr=[];
+    check="";
+    var trEdit;
+    //for SKU validaton
+	$('#product_sku').keypress(function(e){ 
+        var key = e.charCode || e.keyCode || 0;
+        if (key < 48 || key > 58) {
+          	$(this).css('border-color','red');
+          	$(".error").html('Sku Field should be Integer').append("<a href='#' class='close'>X</a>").show();
+        }else{
+        	$(this).css('border','1.8px solid black');
+        	$(".error").hide();
+        }
+	});
+	//for name validaton
+	$('#product_name').keypress(function(e){ 
+        var charCode = (event.which) ? event.which:event.KeyCode;
+		if(charCode >= 65 && charCode <= 90 || charCode>=97 && charCode<=122){
+          	$(this).css('border','1.8px solid black');
+        	$(".error").hide();
+        }else{
+        	$(this).css('border-color','red');
+          	$(".error").html('Name should be letter').append("<a href='#' class='close'>X</a>").show();
+        }
+	});
+	// for add product button
+	$("#add_product").click(function(){
+		if($('#add_product').val()==('Add Product')){
+	        if($("#product_sku").val() !== "" && $("#product_name").val() !== "") {
+	       	 	pr();
+	       	 	$('#add_product_form').find('input:text').val('');     	 
+	    	}else{
+	    		$('.success').hide();
+	    		if($("#product_sku").val() == ""){
+	    			$('.error').html('Sku Field is Empty').append("<a href='#' class='close'>X</a>").show();
+	    		}else if($("#product_name").val() == ""){
+	    			$('.error').html('Name Field is Empty').append("<a href='#' class='close'>X</a>").show();
+	    		}
+	    	}
+	    }else{
+	    	// for editing a content 
+			if(trEdit){
+				var idEdit=$('input[name="product_sku"]').val();
+				var nameEdit=$('input[name="product_name"]').val();
+				var rateEdit=$('input[name="product_price"]').val();
+				var qntEdit=$('input[name="product_quantity"]').val();
+
+				$(trEdit).find('td:eq(0)').text(idEdit);
+				$(trEdit).find('td:eq(1)').text(nameEdit);
+				$(trEdit).find('td:eq(2)').text(rateEdit);
+				$(trEdit).find('td:eq(3)').text(qntEdit);
+				$('input[name="add_product"]').val('Add Product');
+				$('#add_product_form').find('input:text').val(''); 
+			}
+		}
+	});
+	// for checking sku is exist in a table or not
+	function pr() {
+	    var sku = $("#product_sku").val();
+	    var name = $("#product_name").val();
+	    var price = $("#product_price").val();
+	    var qnt = $("#product_quantity").val();   
+	    if(tempArr.length == 0){
+			if(sku != ""){
+				tempArr.push(sku);
+			}
+			myFunction(sku,name,price,qnt);
+		}	
+		else{
+			for(var i=0; i < tempArr.length; i++){
+				
+				if(tempArr[i] != sku){
+					check = "unique id";
+				}
+				else if(tempArr[i] == sku){
+					check = "";
+					alert("The sku already exists!!!");
+						break;
+				}
+			}
+			if(check != ""){
+				myFunction(sku,name,price,qnt);
+				if(sku != ""){
+					tempArr.push(sku);
+				}
+				$(".error").hide();
+				$(".success").show();
+			}
+		}  
+	}
+	//for storing data in array and append it in table
+	function myFunction(sku,name,price,qnt){
+    	arr.push(sku,name,price,qnt);
+    	$("table").append('<tr><td>'+sku+'</td><td>'+name+'</td><td>'+price+'</td><td>'+qnt+'</td><td><a href="javascript:void(0)" class="edit">Edit</a><a href="javascript:void(0)" class="delete">Delete</a></td></tr>');
+    	$('.success').html("Product Added Successfully").append("<a href='#'' class='close'>X</a>").show();
+    }
+    // for editing a row from existing table
+	$("table").on('click','.edit',function(){
+		trEdit=$(this).closest('tr');
+		var idEdit=$(trEdit).find('td:eq(0)').text();
+		var nameEdit=$(trEdit).find('td:eq(1)').text();
+		var rateEdit=$(trEdit).find('td:eq(2)').text();
+		var qntEdit=$(trEdit).find('td:eq(3)').text();
+
+		$('input[name="product_sku"]').val(idEdit);
+		$('input[name="product_name"]').val(nameEdit);
+		$('input[name="product_price"]').val(rateEdit);
+		$('input[name="product_quantity"]').val(qntEdit);
+		$('input[name="add_product"]').val('Update Product');
+	});
+	// for deleting a row from existing table
+	$('table').on('click','.delete',function () {
+	  	var r = confirm("Confirm Delete this Row!");
+	  	if (r == true) {
+		  	$(this).closest('tr').remove();
+		  	// for deleting an sku of deleted row from tempArray
+		  	var value=$(this).closest('tr').children('td:first').text();
+		  	tempArr.splice($.inArray(value, tempArr), 1);
+		  	// print success message for delete
+		    $(".success").html("Product Deleted Successfully").append("<a href='#'' class='close'>X</a>").show();
+	  	}
+	});
+</script>
+</html>	

@@ -1,0 +1,15 @@
+body{
+    margin:0px;
+    padding:0px;
+}
+form{
+    padding: 20px;
+    width:400px
+}
+input{
+    float:right;
+}
+button{
+    margin: 20px 0px;
+    padding: 10px 50px;
+}

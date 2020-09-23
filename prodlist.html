@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product List</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="prodlist.css">
+</head>
+<body>
+	<form action="javascript:void(0)">
+		<label for="P_id">Product ID<input type="text" id="p_id" placeholder="Product ID"></label><br><br>
+		<label for="pname">Product Name<input type="text" id="p_name" placeholder="Product Name"></label><br><br>
+		<label for="prate">Product Pice<input type="text" id="p_rate" placeholder="Product Price in USD"></label>
+		<button type="submit">Add Product</button>
+	</form>
+	<table>
+	</table>
+</body>
+<script type="text/javascript">
+	var arr=[];
+	$('#p_id,#p_rate').keyup(function () { 
+    	this.value = this.value.replace(/[^0-9\.]/g,'');
+	});
+	$('#p_name').keyup(function () { 
+    	this.value = this.value.replace(/[^a-z,A-Z\.]/g,'');
+	});
+	$(document).ready(function(){
+		count=0;
+		$('button').click(function(){
+			pid=$('#p_id').val();
+			pname=$('#p_name').val();
+			prate=$('#p_rate').val();
+			if(pid=="" || pname=="" || prate==""){
+				alert("Retry with some data");
+			}else{
+				if(arr.length == 0){
+					if(pid != ""){
+						arr.push(pid);
+					}
+					$('table').append('<tr><th>Product ID</th><th>Product Name</th><th>Product Price</th></tr></thead>');
+					$('table').append('<tr><td>'+pid+'</td><td>'+pname+'</td><td>'+prate+'</td></tr></thead>');
+				}else{
+					for(var k=0; k < arr.length; k++){
+						if(arr[k] != pid){
+							check = "unique id";
+						}else if(arr[k] == pid){
+							check = "";
+							alert("The id already exists!!!");
+							break;
+						}
+					}
+					if(check != ""){
+						$('table').append('<tr><td>'+pid+'</td><td>'+pname+'</td><td>'+prate+'</td></tr></thead>');
+						if(pid != ""){
+						arr.push(pid);
+						}
+					}
+				}	
+			}
+		});
+	});
+</script>
+</html>

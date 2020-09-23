@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test 3</title>
+	<link rel="stylesheet" type="text/css" href="jstest3.css">
+</head>
+<body>
+	<form action="#">
+        <label>Length Of Rectangle<input type="text" id="Length" onkeypress="javascript:return isNumber(event)"></label><br><br>
+        <label>Breadth Of Rectangle<input type="text" id="Breadth" onkeypress="javascript:return isNumber(event)"></label><br><br>
+        <button type="submit" name="Calculate" onclick="calcu()">Calculate Area and Perimeter</button>
+    </form>
+    <div id="result">
+        <p id="Area"></p>
+        <p id="peri"></p>
+    </div>
+</body>
+<script type="text/javascript">
+    function isNumber(evt) {
+        var Key = (evt.which) ? evt.which : evt.keyCode
+        if (Key != 46 && Key > 31 && (Key < 48 || Key > 57))
+        return false;
+
+        return true;
+    }
+    function calcu(){
+        var x=document.getElementById("Length").value;
+        var y=document.getElementById("Breadth").value;
+        var area=Number(x)*Number(y);
+        var per=(Number(x)+Number(y))*Number(2);
+        document.getElementById("Area").innerHTML= ("Area is "+area+" sq. mtr." +"<br>"+"Perimeter is "+per+" sq. mtr.");
+    }
+</script>
+</html>

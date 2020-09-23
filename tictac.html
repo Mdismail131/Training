@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        body{
+            margin:200px 0px;
+            padding:0px;
+        }
+        td{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+        table{
+            margin: 5px auto;
+        }
+        .verti{
+            border-left:2px solid black;
+            border-right:2px solid black;
+        }
+        .hori{
+            border-top:2px solid black;
+            border-bottom:2px solid black;
+        }
+    </style>
+     
+</head>
+<body>
+    <table>
+        <tr>
+            <td onclick="myfunction(this)"></td>
+            <td class="verti" onclick="myfunction(this)"></td>
+            <td onclick="myfunction(this)"></td>
+        </tr>
+        <tr>
+            <td class="hori" onclick="myfunction(this)"></td>
+            <td class="verti hori" onclick="myfunction(this)"></td>
+            <td class="hori" onclick="myfunction(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="myfunction(this)"></td>
+            <td class="verti" onclick="myfunction(this)"></td>
+            <td onclick="myfunction(this)"></td>
+        </tr>
+    </table>
+    <script src="tictac.js"></script>
+</body> 
+</html>

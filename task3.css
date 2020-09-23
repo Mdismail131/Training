@@ -1,0 +1,78 @@
+body{
+    margin:0px;
+    padding:15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#head{
+    padding: 15px 0;
+    overflow: hidden;
+}
+#head h1{
+    margin: 15px;
+    padding-left: 20px;
+}
+#head #atag{
+    float: right;
+    margin-right:5%;
+}
+#head #atag a{
+    padding: 15px;
+    text-align: right;
+}
+#content{
+    background-color: lightgray;
+    margin: 0px 20px;
+    padding: 2%;
+}
+#container{
+    margin: 20px;
+    padding:20px;
+    overflow: hidden;
+}
+.headers{
+    margin: 5px;
+    width:200px;
+    height: 100px;
+    overflow: hidden;
+    background-color: lightgray;
+}
+.data{
+    float: left;;
+    margin:0px 100px;
+}
+.write{
+    text-align:center;
+}
+#sub{
+    background-color: lightgray;
+    text-align:center;
+    overflow: hidden;
+    padding: 5px;
+    margin: 20px;
+}
+#sub h2{
+    display: inline;
+    margin-inline-end: 0px;
+}
+#sub input{
+    width: 400px;
+    font-size: 1em;
+    margin: 5px;
+    padding: 5px;
+}
+#sub button{
+    color:white;
+    font-size: 1.2em;
+    background-color: blue;
+    padding-left: 15px;
+    padding-right: 50px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    border: none;
+}
+#foot{
+    margin: 0px 5%;
+}
+#foot span{
+    float: right;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weight Validation</title>
+        <link rel="stylesheet" href="jscript.css">    
+    </head>
+    <body>
+        <form >
+            <label for="name">Name<input type="text" id="name" placeholder="Name"></label><br><br>
+            <label for="age">Age<input type="text" id="age" placeholder="Age in Years" onkeypress="javascript:return isNumber(event)"></label><br><br>
+            <label for="weight">Weight<input type="text" id="weight" placeholder="Weight in KG" onkeypress="javascript:return isNumber(event)"></label>
+        </form>
+        <button type="submit" onclick="myFunction()">Submit</button>
+        <div id="result"></div>
+    </body>
+    <script>
+        //for validation
+        function isNumber(evt) {
+            var Key = (evt.which) ? evt.which : evt.keyCode
+            if (Key != 46 && Key > 31 && (Key < 48 || Key > 57))
+                return false;
+
+            return true;
+        }
+        //for Functioning    
+        function myFunction(){
+            var name=document.getElementById("name").value;
+            var age=document.getElementById("age").value;
+            var weight=document.getElementById("weight").value;
+            if(age>=5 && age<=7)
+            {
+                if(weight<15)
+                {
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is less than recommended value of 20KG at an age of "+age+".");
+                }else if(weight>=15 && weight<=20)
+                {
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is perfect.");
+                }else{
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is greater than recommended value of 20KG at an age of "+age+".");
+                }
+            }else if(age>=8 && age<=10)
+            {
+                if(weight<21)
+                {
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is less than recommended value of 25KG at an age of "+age+".");
+                }else if(weight>=21 && weight<=25)
+                {
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is perfect.");
+                }else{
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is greater than recommended value of 25KG at an age of "+age+".");
+                }
+            }else if(age>=11 && age<=15)
+            {
+                if(weight<26)
+                {
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is less than recommended value of 30KG at an age of "+age+".");
+                }else if(weight>=26 && weight<=30)
+                {
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is perfect.");
+                }else{
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is greater than recommended value of 30KG at an age of "+age+".");
+                }
+            }else if(age>=16 && age<=20)
+            {
+                if(weight<31)
+                {
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is less than recommended value of 40KG at an age of "+age+".");
+                }else if(weight>=31 && weight<=40)
+                {
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is perfect.");
+                }else{
+                    document.getElementById("result").innerHTML=("Hello "+name+" !!! your Weight is greater than recommended value of 40KG at an age of "+age+".");
+                }
+            }
+        }
+    </script>
+</html>

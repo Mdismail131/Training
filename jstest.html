@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product List</title>
+	<link rel="stylesheet" type="text/css" href="jscript2.css">
+</head>
+<body>
+	<form action="#">
+        <label>First Number<input type="text" id="fnum" onkeypress="javascript:return isNumber(event)"></label><br><br>
+        <label>Second Number<input type="text" id="snum" onkeypress="javascript:return isNumber(event)"></label><br><br>
+        <button type="submit" name="Multiply" onclick="multi()">Multiply</button>
+        <button type="submit" name="Divide" onclick="divi()">Divide</button>
+        <div id="result"></div>
+    </form>
+</body>
+<script type="text/javascript">
+    function isNumber(evt) {
+        var Key = (evt.which) ? evt.which : evt.keyCode
+        if (Key != 46 && Key > 31 && (Key < 48 || Key > 57))
+        return false;
+
+        return true;
+    }
+    function multi(){
+        var x=document.getElementById("fnum").value;
+         var y=document.getElementById("snum").value;
+         document.getElementById("result").innerHTML= (x*y);
+    }
+    function divi(){
+        var x=document.getElementById("fnum").value;
+        var y=document.getElementById("snum").value;
+        document.getElementById("result").innerHTML= (x/y);
+    }
+</script>
+</html>

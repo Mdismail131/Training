@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To Do List</title>
+	<link rel="stylesheet" type="text/css" href="jquery.css">
+	<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css">
+	<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+     <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('#project').tabs();
+		$("ul").sortable({axis:"x", containment:"#project"});
+		$("ol").sortable({axis:"y", containment:"#project"});
+	});
+</script>
+</head>
+<body>
+	<div id="container">
+		<h2>To Do List</h2>
+		<button id="addproject">Add Project</button>
+		<div id="project">
+			<ul id="main">
+				<li><a href="#personal">Personal</a></li>
+				<li><a href="#office">Office</a></li>
+			</ul>
+			<ol id="personal">
+				<li><input type="checkbox">Wash my clothes</li>
+				<li><input type="checkbox">Go for Walk</li>
+			</ol>
+			<ol id="office">
+				<li><input type="checkbox">Attend a Meeting</li>
+				<li><input type="checkbox">Complete daily task</li>
+			</ol>
+		</div>
+	</div>
+</body>
+</html>

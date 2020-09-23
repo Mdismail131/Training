@@ -1,0 +1,30 @@
+body{
+    margin: 0px 0px;
+    padding-left: 8%;
+    padding-right: 10%;
+    padding-top: 5%;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Style for div which contain list */
+#list{
+    margin: 30px 0px;
+    padding: 0px 0px;
+}
+/* using for list align to the very left side */
+ul{
+    padding: 0 1%; 
+}
+/* design 1 content div */
+#con1{
+    width:48%;
+    float: left;
+    text-align: justify;
+    margin-right: 20px;
+}
+/* design 2 content div */
+#con2{
+    width:50%;
+    float: left;
+    text-align: justify;
+}

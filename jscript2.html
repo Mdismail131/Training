@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product List</title>
+<link rel="stylesheet" type="text/css" href="jscript2.css">
+</head>
+<body>
+<form action="javascript:void(0)">
+<label for="P_id">Product ID<input type="text" id="p_id" placeholder="Product ID" onkeypress="javascript:return isNumber(event)"></label><br><br>
+<label for="pname">Product Name<input type="text" id="p_name" placeholder="Product Name" onkeypress="javascript:return isAlpha(event)"></label><br><br>
+<label for="prate">Product Pice<input type="text" id="p_rate" placeholder="Product Price in USD" onkeypress="javascript:return isNumber(event)"></label>
+<button type="submit" onclick="checkFunction();">Add Product</button>
+</form>
+<table id="table">
+<thead>
+<tr>
+<td>Product ID</td>
+<td>Product Name</td>
+<td>Product Price</td>
+</tr>
+</thead>
+<tbody id="data"></tbody>
+</table>
+</body>
+<script type="text/javascript">
+var tempArr=[];
+var check = "";
+
+
+function isNumber(evt) {
+var Key = (evt.which) ? evt.which : evt.keyCode
+if (Key != 46 && Key > 31 && (Key < 48 || Key > 57))
+return false;
+
+return true;
+}
+function isAlpha(evt){
+var key = (evt.which) ? evt.which : evt.keyCode
+if ((key < 65 || key > 90) && (key < 97 || key > 123) && key != 32)
+return false;
+
+return true;
+}
+function checkFunction(){
+
+	var id=document.getElementById("p_id").value;
+	var name=document.getElementById("p_name").value;
+	var price=document.getElementById("p_rate").value;
+	if(id == "" && name == "" && price == ""){
+
+			alert("Please Insert a Data")
+	}
+
+	if(tempArr.length == 0){
+
+		if(id != ""){
+			tempArr.push(id);
+		}
+		myFunction(id,name,price);
+
+	}	
+	else{
+		for(var k=0; k < tempArr.length; k++){
+			
+			if(tempArr[k] != id){
+				
+				check = "unique id";
+				
+
+			}
+			else if(tempArr[k] == id){
+				check = "";
+				alert("The id already exists!!!");
+				break;
+			}
+		}
+		if(check != ""){
+			myFunction(id,name,price);
+			if(id != ""){
+					tempArr.push(id);
+				}
+		}
+	}
+
+}
+function myFunction(id,name,price){
+
+
+
+
+document.getElementById("table").style.visibility="visible";
+
+
+var	k = "<tr>";
+	k += "<td >" + id + "</td>";
+	k += "<td >" + name + "</td>";
+	k += "<td >" + price + "</td>";
+	k += "</tr>";
+
+document.getElementById("data").innerHTML += k;
+
+
+
+}
+</script>
+</html>
