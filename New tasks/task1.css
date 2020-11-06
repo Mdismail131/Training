@@ -1,0 +1,43 @@
+.body{
+    margin: 0;
+    padding: 0;
+}
+#header{
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    margin: 0px;
+    padding: 10px;
+}
+.link{
+    background-color: grey;
+    color: white;
+    padding: 0px 5px;
+}
+.link a{
+    text-decoration: none;
+    font-size: 18px;
+    color: inherit;
+    padding: 0px 10px;
+    border-right: 1px solid black;
+}
+.body1{
+    height: 400px;
+    width: 70%;
+    float: left;
+    background-color: white;
+}
+.body2{
+    height: 400px; 
+    width: 30%;
+    float: left;   
+    background-color: lightgrey;
+}
+#footer{
+    text-align: center;
+    background-color: black;
+    color: tomato;
+}
+#footer p{
+    margin: 0px;
+}
