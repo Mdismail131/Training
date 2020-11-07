@@ -1,0 +1,315 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-weight: 100;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+header h1{
+    color:  #ff3982;
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 300;
+    margin: 0px;
+    padding: 20px 700px 20px 90px;
+}
+header a{
+    color: black;
+    text-decoration: none;
+    margin: 0px;
+    padding: 20px;
+}
+header a:last-child{
+    border-radius: 50px;
+    color: white;
+    padding: 5px 25px;
+    background-color: #ff3982;
+}
+#container {
+    position: relative;
+    height: 400px;
+    color: white;
+    background-color: #ff3982;
+}  
+#container img{
+    width: 1350px;
+    height: 400px;
+    opacity: 0.5;
+}
+#container p{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    z-index: 25;
+}
+#container p:nth-child(2){
+    position: absolute;
+    font-size: 30px;
+    top: 35%;
+    left: 35%;
+    z-index: 25;
+}
+#container a{
+    position: absolute;
+    text-decoration: none;
+    border-radius: 20px;;
+    padding: 5px 20px;
+    background-color: white;
+    top: 60%;
+    left: 42%;
+    color: #ff3982;
+    z-index: 25;
+}
+#about{
+    display: inline-block;
+}
+.big{
+    font-size: 25px;
+    color:  #ff3982;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+.content-box a{
+    background-color: #ff3982;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+.content-box{
+    width: 30%;
+    float: left;
+    margin-top: 100px;
+    margin-left: 200px;    
+}
+.image{
+    width: 30%;
+    opacity: 25px;
+    margin-top: 100px;
+    margin-left: 200px;   
+}
+.image img{
+    position: absolute;
+    float: left;
+    z-index: -1;
+    left: 58%;
+    border-radius:  0 150px 150px 0;
+}
+.d{
+    border: 4px solid #ff3982;
+    position: relative;
+    width: 200px;
+    z-index: 2;
+    height: 159px;
+    float: left;
+    margin-top: 60px;
+    margin-left: 200px; 
+    border-radius:  50px 150px 150px 50px;
+}
+#features{
+    margin-top: 50px;
+    text-align: center;
+}
+#features div{
+    float: left;
+    width: 200px;
+    margin-left: 15%;
+    margin-bottom: 30px;
+}
+#features div span{
+    font-size: 14px;
+}
+.fa{
+    color: #ff3982;
+}
+.images{
+    width: 50%;
+    margin-top: 80px;
+    margin-left: 250px;   
+}
+.images img{
+    position: relative;
+    width: 200px;
+    float: left;
+    z-index: 2;
+    border-radius: 0 150px 150px 0;
+}
+.ds{
+    border: 4px solid #ff3982;
+    position: absolute;
+    width: 200px;
+    left: 8%;
+    z-index: -1;
+    height: 159px;
+    float: left;
+    margin-top: 100px;
+    margin-left: 100px; 
+    border-radius:  50px 150px 150px 50px;
+}
+.content-box1{
+    width: 30%;
+    margin-left: 700px;    
+}
+#dashboard{
+    margin-top: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+#dashboard p:nth-of-type(2){
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+#reviews{
+    margin-top: 20px;
+    height: 500px;
+    text-align: center;
+}
+#reviews p{
+    margin-left: 35%;
+    padding: 0;
+    text-align: center;
+    width: 380px;
+    font-size: 28px;
+}
+#reviews p span{
+    color: #ff3982;
+}
+#reviews div{
+    border: 1px solid lightgray;
+    width: 320px !important;
+    height: 300px;
+    float: left;
+    margin-left: 7%;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    z-index: 20;
+}
+.inner{
+    display: block;
+    margin: 20px;
+}
+.la{
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 10px 15px;
+}
+#signup{
+    height: 635px;
+    background-color: #1b1515;
+}
+#signup #heading{
+    background-color: #ff3982;
+    color: white;
+    padding: 20px 20px;
+}
+#signup p{
+    font-size: 30px;
+    display: inline-block;
+}
+#signup a{
+    background-color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #ff3982;
+    padding: 20px;
+    margin-left: 40%;
+}
+#signup img{
+    width: 100%;
+    height: 500px;
+    opacity: 0.5;
+}
+#signup #form_image{
+    position: relative;
+    height: 120px;
+}
+#signup #form_content{
+    width: 300px;
+    color: white;
+    position: absolute;
+    left: 15%;
+}
+#signup #form_content h1{
+    font-size: 30px;
+    color: white;
+    line-height: 1.5em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#signup #form_content p{
+    font-size: 14px;
+    color: white;
+    line-height: 1.5em;
+}
+#signup #form_field{
+    position: absolute;
+    color: white;
+    line-height: 1.5em;
+    left: 45%;
+}
+#signup #form_field input[type="text"]{
+    opacity: 0.5;
+    width: 400px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+}
+#signup #form_field #msg{
+    height: 50px;
+}
+#signup #form_field sup{
+    color: #ff3982;
+}
+#signup #form_field input[type="submit"]{
+    margin-top: 5px;
+    width: 405px;
+    color: white;
+    background-color: #ff3982;
+    padding: 5px 0px; 
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+}
+#footer{
+    display: inline-block;
+}
+#icon{
+    margin: 3% 10%;
+    float: left;
+}
+#icon .fa{
+    background-color: black;
+    color: white;
+    padding: 2px;
+    margin: 15px;
+}
+#oslo{
+    float: left;
+    margin-left: 80px;
+    text-align: center;
+}
+#oslo .fa{
+    border: none;
+}
+#oslo #p1{
+    color: #ff3982;
+    font-size: 50px;
+    
+}
+#oslo #p2{
+    font-size: 15px;
+}
+#quick_links{
+    padding: 70px 0px;
+    text-align: center;
+}
+#quick_links a{
+    padding: 0px 5px;
+    color: inherit;
+    text-decoration: none;
+}
+
+
