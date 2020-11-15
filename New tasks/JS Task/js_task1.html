@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jscript</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container mt-5">
+		<div id="add_task_form">
+			<label for="task">
+				Task Name: <input type="text" name="task" id="task_name">
+			</label>
+            <input class="ml-3 btn-primary" type="button" name="add_product" value="Add Task" onclick="myfunction()">
+		</div>
+		<div class="container mt-5">
+			<h3>To Do:</h3>
+			<div id="to-do-list">
+			</div>
+		</div>
+		<div class="container mt-5">
+			<h3>Completed:</h3>
+			<div id="completed-task-list">
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js_task1.js"></script>
+</body>
+</html>
